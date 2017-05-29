@@ -11,11 +11,11 @@ getQuestionById:function(id,callback){
 },
 addQuestion:function(Question,callback)
 {
-    return db.query("insert into question_tbl values(?,?,?,?,?,?,?)",[Question.question_id,Question.question_title,Question.question_desc,Question.fk_category_id,Question.date,Question.approve,Question.fk_email_id],callback);
+    return db.query("insert into question_tbl(question_title,question_desc,fk_category_id,date,apporve,fk_email_id) values(?,?,?,?,?,?)",[Question.question_title,Question.question_desc,Question.fk_category_id,Question.date,Question.apporve,Question.fk_email_id],callback);
 },
 updateQuestion:function(id,Question,callback)
 {
-    return db.query("update question_tbl set question_title=?,question_desc=?,fk_category_id=?,date=?,approve=? where question_id=?",[Question.question_title,Question.question_desc,Question.fk_category_id,Question.date,Question.approve,id],callback);
+    return db.query("update question_tbl set question_title=?,question_desc=?,fk_category_id=?,date=?,apporve=? where question_id=?",[Question.question_title,Question.question_desc,Question.fk_category_id,Question.date,Question.apporve,id],callback);
 },
 deleteQuestion:function(id,callback)
 {
