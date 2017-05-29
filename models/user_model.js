@@ -8,6 +8,14 @@ var User={
     {
         return db.query("select * from user_and_tbl where email_id=?",[id],callback);
     },
+    userLoginCheck:function(User,callback)
+    {
+        return db.query("select * from user_and_tbl where email_id=? and password=?",[User.email_id,User.password],callback);
+    },
+    userLogin:function(id,callback)
+    {
+        return db.query("select * from user_and_tbl where email_id=?",[id],callback);
+    },
     addUser:function(User,callback)
     {
         return db.query("insert into user_and_tbl values(?,?,?,?,?,?)",[User.email_id,User.user_name,User.password,User.user_photo,User.mobile_no,User.gender],callback);
