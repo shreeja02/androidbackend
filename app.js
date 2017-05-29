@@ -11,6 +11,9 @@ var login=require('./routes/login');
 
 var question = require('./routes/question');
 var multiDeletequestion = require('./routes/multiDeletequestion');
+var answer = require ('./routes/answer');
+var delallanswer= require ('./routes/multiDeleteAnswer');
+var ansque_userjoin= require('./routes/ansque_userjoin');
 
 var app = express();
 
@@ -34,6 +37,8 @@ app.use('/login',login);
 
 app.use('/question', question);
 app.use('/multiDeletequestion', multiDeletequestion);
+app.use('/answer',answer);
+app.use('/ansque_userjoin',ansque_userjoin);
 
 
 // catch 404 and forward to error handler
