@@ -25,6 +25,10 @@ var User={
         return db.query("update user_and_tbl set user_name=?,user_photo=?,mobile_no=?,gender=? where email_id=?",[User.user_name,User.user_photo,User.mobile_no,User.gender,id],callback);
 
     },
+    changePassword: function(id,User, callback) {  
+        return db.query("update user_and_tbl set password=? where email_id=? ",[User.password,id], callback);  
+    }
+    ,
     deleteUser:function(id,callback)
     {
         return db.query("delete from user_and_tbl where email_id=?",[id],callback);
