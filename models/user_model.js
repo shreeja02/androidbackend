@@ -32,7 +32,7 @@ var User={
     deleteAllUser:function(item,callback)
     {
         var delarr=[];
-        for(i=0;i<item.length();i++)
+        for(i=0;i<item.length;i++)
         {
             delarr[i]=item[i].email_id;
         }

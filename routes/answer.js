@@ -4,7 +4,7 @@ var router=express.Router();
 
 router.get('/:id?',function(req,res,next){
     if(req.params.id){
-        answer.getAnswerById(req.params.id,function(err,rows){
+        answer.getAnswerByEmailId(req.params.id,function(err,rows){
         if(err){
             res.json(err);
         }
