@@ -75,7 +75,7 @@ router.delete('/:id',function(req,res,next){
     }
     else
     {
-      res.json(count);
+      res.json(rows);
     }
 
 

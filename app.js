@@ -15,7 +15,8 @@ var multiDeleteUser = require('./routes/multiDeleteUser');
 var answer = require ('./routes/answer');
 var delallanswer= require ('./routes/multiDeleteAnswer');
 var ansque_userjoin= require('./routes/ansque_userjoin');
-
+var questionbycatid=require('./routes/questionbycatid');
+var answerbyuser=require('./routes/getallanswerbyuser');
 var app = express();
 
 // view engine setup
@@ -35,13 +36,14 @@ app.use('/users', users);
 
 app.use('/login',login);
 
-
+app.use('/muldelanswer',delallanswer);
 app.use('/question', question);
 app.use('/multiDeletequestion', multiDeletequestion);
 app.use('/multiDeleteUser', multiDeleteUser);
 app.use('/answer',answer);
 app.use('/ansque_userjoin',ansque_userjoin);
-
+app.use('/questionbycatid',questionbycatid);
+app.use('/getallanswerbyuser',answerbyuser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
