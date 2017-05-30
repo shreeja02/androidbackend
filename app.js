@@ -15,6 +15,8 @@ var multiDeleteUser = require('./routes/multiDeleteUser');
 var answer = require ('./routes/answer');
 var delallanswer= require ('./routes/multiDeleteAnswer');
 var ansque_userjoin= require('./routes/ansque_userjoin');
+var answerbyquestid=require('./routes/answerbyqusid');
+var qususer=require('./routes/qususerjoin');
 
 var app = express();
 
@@ -41,6 +43,8 @@ app.use('/multiDeletequestion', multiDeletequestion);
 app.use('/multiDeleteUser', multiDeleteUser);
 app.use('/answer',answer);
 app.use('/ansque_userjoin',ansque_userjoin);
+app.use('/answerbyquestid',answerbyquestid);
+app.use('/qususer',qususer);
 
 
 // catch 404 and forward to error handler

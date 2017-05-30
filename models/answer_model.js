@@ -35,6 +35,12 @@ var Answer={
             delarr[i]=item[i].answer_id;
         }
         return db.query("delete from answer_tbl where answer_id IN (?)",[delarr],callback);
+    },
+
+    getAnswerByQueId:function(id,callback){
+
+    return db.query("select a.*,u.* from answer_tbl as a,user_and_tbl as u where a.fk_email_id=u.email_id and a.fk_que_id=?",[id],callback);
     }
+
 };
 module.exports=Answer;

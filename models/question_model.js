@@ -29,6 +29,10 @@ deleteAllQuestion:function(item,callback)
         delarr[i]=item[i].question_id;
     }
     return db.query("select * from question_tbl where question_id IN (?)",[delarr],callback);
+},
+getQusUserJoin:function(id,callback)
+{
+    return db.query("Select q.*,u.* from question_tbl as q,user_and_tbl as u where q.fk_email_id=u.email_id and q.question_id=?",[id],callback);
 }
 };
 module.exports=Question;
