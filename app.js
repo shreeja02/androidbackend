@@ -20,6 +20,7 @@ var qususer=require('./routes/qususerjoin');
 var questionbycatid=require('./routes/questionbycatid');
 var answerbyuser=require('./routes/getallanswerbyuser');
 var changepass=require('./routes/changepassword');
+var questionbyuser=require('./routes/getquestioinbyuser');
 var app = express();
 
 // view engine setup
@@ -51,6 +52,7 @@ app.use('/questionbycatid',questionbycatid);
 app.use('/getallanswerbyuser',answerbyuser);
 app.use('/changepassword',changepass);
 app.use('/category',category);
+app.use('/questionbyuser',questionbyuser);
 
 
 // catch 404 and forward to error handler

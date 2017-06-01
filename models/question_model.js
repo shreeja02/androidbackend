@@ -49,6 +49,10 @@ deleteAllQuestion:function(item,callback)
 getQusUserJoin:function(id,callback)
 {
     return db.query("Select q.*,u.* from question_tbl as q,user_and_tbl as u where q.fk_email_id=u.email_id and q.question_id=?",[id],callback);
+},
+getQuestionByUser:function(id,callback)
+{
+return db.query("Select q.*,u.user_photo from question_tbl as q,user_and_tbl as u where q.fk_email_id=? and apporve=?",[id,"yes"],callback);
 }
 };
 module.exports=Question;
