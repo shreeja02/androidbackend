@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login=require('./routes/login');
-
+var category=require('./routes/category');
 var question = require('./routes/question');
 var multiDeletequestion = require('./routes/multiDeletequestion');
 var multiDeleteUser = require('./routes/multiDeleteUser');
@@ -50,6 +50,7 @@ app.use('/qususer',qususer);
 app.use('/questionbycatid',questionbycatid);
 app.use('/getallanswerbyuser',answerbyuser);
 app.use('/changepassword',changepass);
+app.use('/category',category);
 
 
 // catch 404 and forward to error handler
