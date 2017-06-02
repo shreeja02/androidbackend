@@ -3,7 +3,7 @@ var Question={
 
 getAllQuestion:function(callback){
 
-    return db.query("select * from question_tbl",callback);
+    return db.query("select q.*,u.*,c.* from question_tbl as q,user_and_tbl as u,category_tbl as c where q.fk_email_id=u.email_id and q.fk_category_id=c.category_id",callback);
 },
 questionByCategoryId:function(id,callback){
 
@@ -52,7 +52,7 @@ getQusUserJoin:function(id,callback)
 },
 getQuestionByUser:function(id,callback)
 {
-return db.query("Select q.*,u.user_photo from question_tbl as q,user_and_tbl as u where q.fk_email_id=? and apporve=?",[id,"yes"],callback);
+return db.query("Select q.*,u.user_photo from question_tbl as q,user_and_tbl as u where q.fk_email_id=u.email_id and u.email_id=? and apporve='yes'",[id],callback);
 }
 };
 module.exports=Question;
