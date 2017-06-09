@@ -21,6 +21,8 @@ var questionbycatid=require('./routes/questionbycatid');
 var answerbyuser=require('./routes/getallanswerbyuser');
 var changepass=require('./routes/changepassword');
 var questionbyuser=require('./routes/getquestioinbyuser');
+var questionsearch=require('./routes/searchbyquestion');
+
 var app = express();
 
 // view engine setup
@@ -53,7 +55,7 @@ app.use('/getallanswerbyuser',answerbyuser);
 app.use('/changepassword',changepass);
 app.use('/category',category);
 app.use('/questionbyuser',questionbyuser);
-
+app.use('/quetitleserch',questionsearch);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -53,6 +53,13 @@ getQusUserJoin:function(id,callback)
 getQuestionByUser:function(id,callback)
 {
 return db.query("Select q.*,u.user_photo from question_tbl as q,user_and_tbl as u where q.fk_email_id=u.email_id and u.email_id=? and apporve='yes'",[id],callback);
+},
+wherebyQuestionTitle:function(t,callback)
+{
+    //Console.log("SELECT * FROM question_tbl WHERE question_title LIKE  'w%'");
+console.log(t);
+
+return db.query("SELECT * FROM question_tbl WHERE question_title LIKE ? ",'%'+ t.title +'%',callback);
 }
 };
 module.exports=Question;
