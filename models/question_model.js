@@ -59,7 +59,7 @@ wherebyQuestionTitle:function(t,callback)
     //Console.log("SELECT * FROM question_tbl WHERE question_title LIKE  'w%'");
 console.log(t);
 
-return db.query("SELECT * FROM question_tbl WHERE question_title LIKE ? ",'%'+ t.title +'%',callback);
+return db.query("select q.*,u.*,c.* from question_tbl as q,user_and_tbl as u,category_tbl as c where q.fk_email_id=u.email_id and q.fk_category_id=c.category_id and q.question_title LIKE ? ",'%'+ t.title +'%',callback);
 }
 };
 module.exports=Question;
